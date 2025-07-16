@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tesla Model 3 Details</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f0f0f0;
+      color: #333;
+      padding-top: 120px; /* Space for fixed header */
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: gray;
+      color: black;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 0;
+    }
+
+    .car-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .car-image {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .hotspot {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background-color: #ff4d30;
+      border-radius: 50%;
+      border: 2px solid white;
+      cursor: pointer;
+    }
+
+    /* Optional tooltip */
+    .hotspot::after {
+      content: attr(data-info);
+      position: absolute;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      font-size: 0.85rem;
+      z-index: 10;
+    }
+
+    .hotspot:hover::after {
+      opacity: 1;
+    }
+
+    .info-box {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      min-height: 60px;
+      transition: 0.3s ease;
+    }
+
+    .model-section {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .model-section h2 {
+      color: #ff4d30;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: #ff4d30;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Explore the Tesla Model 3</h1>
+  </header>
+
+  <div class="car-container">
+    <img src="tesla3.jpg" alt="Tesla Model 3" class="car-image">
+
+    <!-- Hotspots with updated and new parts -->
+    <div class="hotspot" style="top: 65%; left: 40%;" data-info="🚘 Wheels: 20'' Performance Rims for better grip and aerodynamics."></div>
+    <div class="hotspot" style="top: 55%; left: 10.5%;" data-info="🛞 Rear Wheels: Enhanced suspension and regenerative braking system."></div>
+    <div class="hotspot" style="top: 40%; left: 15%;" data-info="🔋 Battery: Long Range Dual Motor battery pack underneath."></div>
+    <div class="hotspot" style="top: 20%; left: 42%;" data-info="🌐 Roof: All-glass panoramic roof with UV and infrared protection."></div>
+    <div class="hotspot" style="top: 47%; left: 50%;" data-info="💡 Headlights: Adaptive LED Matrix with automatic high-beam."></div>
+
+    <!-- New clickable parts -->
+    <div class="hotspot" style="top: 40%; left: 23%;" data-info="🚪 Door Handles: Flush-mounted and automatically present when touched."></div>
+    <div class="hotspot" style="top: 38.5%; left: 10%;" data-info="⚡ Charging Port: Hidden behind the left rear tail light with fast charging support (250kW)."></div>
+    <div class="hotspot" style="top: 25%; left: 48%;" data-info="📷 Cameras: Equipped with 8 external cameras for Autopilot and 360° vision."></div>
+    <div class="hotspot" style="top: 32%; left: 55%;" data-info="🧠 Autopilot Computer: Full Self-Driving Hardware 4.0 onboard."></div>
+    <div class="hotspot" style="top: 35%; left: 70%;" data-info="💨 Aerodynamic Side Mirrors: Minimized drag, integrated with side cameras."></div>
+  </div>
+
+  <div class="info-box" id="info-box">Click a red dot on the car to learn more.</div>
+
+  <script>
+    const hotspots = document.querySelectorAll('.hotspot');
+    const infoBox = document.getElementById('info-box');
+
+    hotspots.forEach(hotspot => {
+      hotspot.addEventListener('click', () => {
+        const info = hotspot.getAttribute('data-info');
+        infoBox.textContent = info;
+      });
+    });
+  </script>
+
+  <div class="model-section">
+    <h2>Standard Range Plus</h2>
+    <p>• Range: 423 km (263 miles)<br>
+       • Top Speed: 225 km/h (140 mph)<br>
+       • 0–100 km/h: 5.3 seconds<br>
+       • Rear-Wheel Drive</p>
+  </div>
+
+  <div class="model-section">
+    <h2>Long Range</h2>
+    <p>• Range: 568 km (353 miles)<br>
+       • Top Speed: 233 km/h (145 mph)<br>
+       • 0–100 km/h: 4.2 seconds<br>
+       • Dual Motor All-Wheel Drive</p>
+  </div>
+
+  <div class="model-section">
+    <h2>Performance</h2>
+    <p>• Range: 507 km (315 miles)<br>
+       • Top Speed: 261 km/h (162 mph)<br>
+       • 0–100 km/h: 3.1 seconds<br>
+       • Dual Motor All-Wheel Drive • Track Mode</p>
+  </div>
+
+  <a href="Deon2.html" class="back-link">← Back to All Cars</a>
+</body>
+</html>

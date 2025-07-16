@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ferrari Purosangue Hotspot Demo</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f0f0f0;
+      color: #333;
+      padding-top: 120px;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #900;
+      color: black;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 0;
+    }
+
+    .car-container {
+      max-width: 1025px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .car-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .hotspot {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background-color: #d00000;
+      border: 2px solid white;
+      border-radius: 50%;
+      cursor: pointer;
+      transform: translate(-50%, -50%);
+    }
+
+    .hotspot::after {
+      content: attr(data-info);
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      font-size: 0.85rem;
+      z-index: 10;
+    }
+
+    .hotspot:hover::after {
+      opacity: 1;
+    }
+
+    .info-box {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      min-height: 60px;
+      transition: 0.3s ease;
+    }
+
+    .model-section {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .model-section h2 {
+      color: #c00;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: #c00;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Explore the 2024 Ferrari Purosangue</h1>
+  </header>
+
+  <div class="car-container">
+    <img src="ferrari.jpg" alt="Ferrari Purosangue" class="car-image"/>
+
+    <!-- Approximate Hotspots -->
+    <div class="hotspot" style="left: 53%; top: 72%;" data-info="🛞 Front Wheel: 22&quot; alloy wheels with carbon-ceramic brakes."></div>
+    <div class="hotspot" style="left: 94%; top: 60%;" data-info="🛞 Rear Wheel: Wider 23&quot; rims for optimal grip."></div>
+    <div class="hotspot" style="left: 35%; top: 55%;" data-info="💡 Headlights: Slim matrix LED lights with DRLs."></div>
+    <div class="hotspot" style="left: 96%; top: 40%;" data-info="🔊 Exhaust: Quad exhaust system with performance tuning."></div>
+    <div class="hotspot" style="left: 25%; top: 45%;" data-info="🚀 Engine: 6.5L V12 engine with 715 HP."></div>
+    <div class="hotspot" style="left: 58%; top: 12%;" data-info="🌐 Roof: Carbon fiber roof with aerodynamic design."></div>
+    <div class="hotspot" style="left: 73%; top: 43%;" data-info="🚪 Door: Suicide-style rear-hinged back doors."></div>
+    <div class="hotspot" style="left: 17%; top: 74%;" data-info="📷 Front Camera: 360° view & adaptive cruise."></div>
+  </div>
+
+  <div class="info-box" id="info-box">Click a red dot to learn more about each feature.</div>
+
+  <script>
+    const hotspots = document.querySelectorAll('.hotspot');
+    const infoBox = document.getElementById('info-box');
+
+    hotspots.forEach(hotspot => {
+      hotspot.addEventListener('click', () => {
+        infoBox.textContent = hotspot.getAttribute('data-info');
+      });
+    });
+  </script>
+
+  <div class="model-section">
+    <h2>Ferrari Purosangue</h2>
+    <div class="model-section">
+  <h2>Ferrari Purosangue – Power</h2>
+  <p>• Power: 715 hp</p>
+</div>
+
+<div class="model-section">
+  <h2>Ferrari Purosangue – Top Speed</h2>
+  <p>• Top Speed: 310 km/h (193 mph)</p>
+</div>
+
+<div class="model-section">
+  <h2>Ferrari Purosangue – Acceleration</h2>
+  <p>• 0–100 km/h: 3.3 seconds</p>
+</div>
+
+<div class="model-section">
+  <h2>Ferrari Purosangue – Drivetrain</h2>
+  <p>• All-Wheel Drive (8-speed dual-clutch automatic)</p>
+  </div>
+
+  <a href="Deon2.html" class="back-link">← Back to All Cars</a>
+
+</body>
+</html>

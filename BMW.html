@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BMW M4 Hotspot Demo</title>
+  <style>
+   body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f0f0f0;
+      color: #333;
+      padding-top: 120px; /* Space for fixed header */
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #000;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    h1 {
+      text-align: center;
+      margin: 0;
+    }
+
+    .car-container {
+      max-width: 1025px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .car-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .hotspot {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background-color: #d00000;
+      border: 2px solid white;
+      border-radius: 50%;
+      cursor: pointer;
+      transform: translate(-50%, -50%);
+    }
+
+    .hotspot::after {
+      content: attr(data-info);
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      font-size: 0.85rem;
+      z-index: 10;
+    }
+
+    .hotspot:hover::after {
+      opacity: 1;
+    }
+
+       .info-box {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      min-height: 60px;
+      transition: 0.3s ease;
+    }
+
+     .model-section {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .model-section h2 {
+      color: #ff4d30;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: #ff4d30;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Explore the 2024 BMW M4 Competition</h1>
+  </header>
+
+  <div class="car-container">
+    <img src="bmw_m4.jpg" alt="BMW M4" class="car-image">
+
+    <!-- Hotspots: x%, y% positions -->
+    <div class="hotspot" style="left: 55.4%; top: 71.0%;" data-info="🛞 Front Wheel: 19&quot; forged wheels with red M calipers."></div>
+    <div class="hotspot" style="left: 83.0%; top: 60.5%;" data-info="🛞 Rear Wheel: 20&quot; forged wheels with performance tires."></div>
+    <div class="hotspot" style="left: 45.0%; top: 64.8%;" data-info="💡 Laser Headlights: BMW Laserlight with DRL."></div>
+    <div class="hotspot" style="left: 85.5%; top: 55.0%;" data-info="🔊 Exhaust: Quad-pipe M sport exhaust with active sound."></div>
+    <div class="hotspot" style="left: 38.5%; top: 55.5%;" data-info="🚀 Engine: TwinPower Turbo inline-6 with 503 HP."></div>
+    <div class="hotspot" style="left: 56.2%; top: 36.5%;" data-info="🌐 Carbon Roof: Lightweight and aerodynamic."></div>
+    <div class="hotspot" style="left: 74.0%; top: 50.0%;" data-info="🚪 Door Handle: Keyless entry with M trim."></div>
+    <div class="hotspot" style="left: 28.5%; top: 75.5%;" data-info="📷 Front Sensors: Park assist and 360° view."></div>
+  </div>
+
+  <div class="info-box" id="info-box">Click a red dot to learn more about each feature.</div>
+
+  <script>
+    const hotspots = document.querySelectorAll('.hotspot');
+    const infoBox = document.getElementById('info-box');
+
+    hotspots.forEach(hotspot => {
+      hotspot.addEventListener('click', () => {
+        infoBox.textContent = hotspot.getAttribute('data-info');
+      });
+    });
+  </script>
+
+  <div class="model-section">
+  <h2>M4 Coupe</h2>
+  <p>• Power: 473 hp<br>
+     • Top Speed: 250 km/h (155 mph)<br>
+     • 0–100 km/h: 4.1 seconds<br>
+     • Rear-Wheel Drive (6-speed manual)</p>
+</div>
+
+<div class="model-section">
+  <h2>M4 Competition Coupe</h2>
+  <p>• Power: 503 hp<br>
+     • Top Speed: 250 km/h (155 mph), optional 280 km/h (174 mph)<br>
+     • 0–100 km/h: 3.9 seconds<br>
+     • Rear-Wheel Drive (8-speed automatic)</p>
+</div>
+
+<div class="model-section">
+  <h2>M4 Competition xDrive Coupe</h2>
+  <p>• Power: 503 hp<br>
+     • Top Speed: 250 km/h (155 mph), optional 280 km/h (174 mph)<br>
+     • 0–100 km/h: 3.4 seconds<br>
+     • All-Wheel Drive (xDrive)</p>
+</div>
+
+<a href="Deon2.html" class="back-link">← Back to All Cars</a>
+<br>
+
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AutoDrive - All Cars</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: black;
+      color: #ffffff;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      color: black;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: black;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+    }
+
+    .all-cars {
+      padding: 6rem 2rem 3rem;
+      text-align: center;
+    }
+
+    .all-cars h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .car-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    @media (max-width: 1024px) {
+      .car-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .car-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .car-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      color: #000;
+      transition: transform 0.2s ease;
+    }
+
+    .car-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .car-card img {
+      width: 50%;
+      height: auto;
+      display: block;
+      margin: 0 auto 1rem;
+      border-radius: 10px;
+    }
+
+    footer {
+      background-color: white;
+      color: black;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">AutoDrive</div>
+    <nav>
+      <a href="Deon.html">Home</a>
+      <a href="Contact.html">Contact</a>
+      <a href="Sign-up.html">Sign-up</a>
+    </nav>
+  </header>
+
+  <section class="all-cars">
+    <h2>Explore Our Car Collection</h2>
+    <div class="car-grid">
+
+      <a href="Tesla.html" style="text-decoration: none; color: inherit;">
+        <div class="car-card">
+          <img src="tesla3.jpg" alt="Tesla Model 3" />
+          <h3>2024 Tesla Model 3</h3>
+          <p>Electric • 350km range • Auto Pilot</p>
+        </div>
+      </a>
+
+      <a href="BMW.html" style="text-decoration: none; color: inherit;">
+        <div class="car-card">
+          <img src="bmw_m4.jpg" alt="BMW M4" />
+          <h3>2024 BMW M4</h3>
+          <p>Gasoline • Manual • 473 HP</p>
+        </div>
+      </a> 
+
+      <a href="Ferrari Purosangue.html" style="text-decoration: none; color: inherit;">
+        <div class="car-card">
+          <img src="ferrari.jpg" alt="Ferrari Purosangue" />
+          <h3>Ferrari Purosangue</h3>
+          <p>V12 • 715 HP • Luxury SUV</p>
+        </div>
+      </a>
+
+      <div class="car-card">
+        <img src="audi_rs7.jpg" alt="Audi RS7" />
+        <h3>2023 Audi RS7</h3>
+        <p>Gasoline • AWD • 591 HP</p>
+      </div>
+
+      <div class="car-card">
+        <img src="mercedes.jpg" alt="Mercedes AMG GT" />
+        <h3>Mercedes AMG GT</h3>
+        <p>Coupe • 577 HP • Sports</p>
+      </div>
+
+      <div class="car-card">
+        <img src="lexus.jpg" alt="Lexus LC500" />
+        <h3>Lexus LC500</h3>
+        <p>V8 • Premium Interior • Hybrid Option</p>
+      </div>
+
+      <div class="car-card">
+        <img src="jeep wrangler.jpg" alt="Jeep Wrangler" />
+        <h3>Jeep Wrangler 2024</h3>
+        <p>Off-road • Rugged • 4x4 Drive</p>
+      </div>
+
+      <div class="car-card">
+        <img src="toyota supra1.jpg" alt="Toyota Supra" />
+        <h3>Toyota GR Supra</h3>
+        <p>Sporty • 382 HP • RWD</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 AutoDrive. All rights reserved.</p>
+  </footer>
+</body>
+</html>
